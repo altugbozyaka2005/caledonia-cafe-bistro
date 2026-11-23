@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Caledonia Café &amp; Bistro · Breakfast, Brunch &amp; Coffee on Gorgie Road, Edinburgh</title>
+<meta name="description" content="Caledonia Café & Bistro, 195 Gorgie Road, Edinburgh. Proper Scottish breakfasts, brunch, lunch and coffee. Open every day 8am–5pm. Dog friendly. Walk-ins and bookings.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#B4232B; --red-dk:#8E1A21; --cream:#FBF5EC; --paper:#F4EADB; --ink:#231B17;
+  --muted:#6E625A; --line:#E5D8C6; --gold:#D9A441;
+  --serif:'Fraunces',Georgia,serif; --sans:'Inter',system-ui,-apple-system,sans-serif;
+  --r:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{width:min(1180px,92vw);margin-inline:auto}
+.eyebrow{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--red)}
+h1,h2,h3{font-family:var(--serif);font-weight:800;line-height:1.05;letter-spacing:-.01em}
+h2{font-size:clamp(2rem,4.2vw,3.2rem);margin:.4rem 0 1rem}
+.lead{font-size:1.1rem;color:var(--muted);max-width:56ch}
+.btn{display:inline-flex;align-items:center;gap:.55rem;padding:.95rem 1.5rem;border-radius:999px;font-weight:600;text-decoration:none;transition:transform .2s,background .2s,box-shadow .2s;font-size:.98rem;border:0;cursor:pointer}
+.btn:hover{transform:translateY(-2px)}
+.btn-red{background:var(--red);color:#fff;box-shadow:0 8px 24px -8px rgba(180,35,43,.6)}
+.btn-red:hover{background:var(--red-dk)}
+.btn-ghost{background:rgba(255,255,255,.14);color:#fff;border:1.5px solid rgba(255,255,255,.55);backdrop-filter:blur(6px)}
+.btn-line{border:1.5px solid var(--ink);color:var(--ink);background:transparent}
+.img{background:linear-gradient(135deg,#c9a27a,#7a3b2a);object-fit:cover;width:100%;height:100%}
+
+/* NAV */
+.nav{position:fixed;inset:0 0 auto;z-index:50;transition:background .3s,box-shadow .3s}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:#fff}
+.brand svg{width:46px;height:46px;flex:none}
+.brand b{font-family:var(--serif);font-size:1.35rem;font-weight:800;letter-spacing:.01em}
+.brand small{display:block;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;opacity:.85;margin-top:-2px}
+.nav ul{display:flex;gap:2rem;list-style:none;align-items:center}
+.nav ul a{text-decoration:none;color:#fff;font-weight:500;font-size:.95rem;opacity:.92}
+.nav ul a:hover{opacity:1}
+.nav .btn{padding:.6rem 1.15rem;font-size:.9rem}
+.nav.solid{background:rgba(251,245,236,.94);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line)}
+.nav.solid .brand,.nav.solid ul a{color:var(--ink)}
+.burger{display:none;background:none;border:0;color:#fff;cursor:pointer}
+.nav.solid .burger{color:var(--ink)}
+
+/* HERO */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+.hero .bg{position:absolute;inset:0}
+.hero .bg img{animation:kb 18s ease-out forwards}
+@keyframes kb{from{transform:scale(1.12)}to{transform:scale(1)}}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,10,8,.55) 0%,rgba(20,10,8,.15) 35%,rgba(20,10,8,.82) 100%)}
+.hero .wrap{position:relative;z-index:2;padding-bottom:9vh}
+.hero h1{font-size:clamp(2.8rem,7.4vw,6.2rem);max-width:12ch;margin:.8rem 0 1.2rem}
+.hero h1 em{font-style:italic;font-weight:400;color:#FFD9B8}
+.hero p{font-size:clamp(1.05rem,1.6vw,1.25rem);max-width:46ch;opacity:.92}
+.hero .ctas{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:2rem}
+.rating{display:inline-flex;align-items:center;gap:.6rem;background:rgba(255,255,255,.14);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.3);padding:.45rem .9rem;border-radius:999px;font-size:.88rem}
+.stars{color:var(--gold);letter-spacing:2px}
+.open-pill{position:absolute;right:4vw;bottom:9vh;z-index:2;background:var(--cream);color:var(--ink);border-radius:var(--r);padding:1.1rem 1.3rem;box-shadow:0 20px 50px -20px rgba(0,0,0,.5);min-width:220px}
+.open-pill .dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#2f9e5b;margin-right:.45rem;box-shadow:0 0 0 4px rgba(47,158,91,.18)}
+.open-pill .dot.closed{background:#c0392b;box-shadow:0 0 0 4px rgba(192,57,43,.18)}
+.open-pill strong{font-size:.95rem}
+.open-pill div{font-size:.85rem;color:var(--muted);margin-top:.2rem}
+
+/* PERKS */
+.perks{background:var(--red);color:#fff;overflow:hidden}
+.marq{display:flex;gap:3rem;padding:1.05rem 0;white-space:nowrap;animation:mq 32s linear infinite;width:max-content;font-weight:500}
+.marq span{display:inline-flex;align-items:center;gap:.7rem}
+.marq span:after{content:"✦";color:#FFD9B8;margin-left:3rem}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+section{padding:clamp(4.5rem,9vw,7.5rem) 0}
+
+/* FAVOURITES */
+.favs-head{display:flex;justify-content:space-between;align-items:end;gap:2rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.grid-favs{display:grid;grid-template-columns:repeat(12,1fr);gap:1.1rem}
+.card{position:relative;border-radius:var(--r);overflow:hidden;min-height:300px;color:#fff;isolation:isolate}
+.card img{position:absolute;inset:0;transition:transform .7s ease}
+.card:hover img{transform:scale(1.06)}
+.card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(15,8,6,.85));z-index:0}
+.card .txt{position:absolute;left:1.4rem;right:1.4rem;bottom:1.3rem;z-index:1}
+.card h3{font-size:1.55rem;margin-bottom:.25rem}
+.card p{font-size:.9rem;opacity:.88}
+.tag{display:inline-block;background:var(--cream);color:var(--red);font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .65rem;border-radius:999px;margin-bottom:.6rem}
+.c1{grid-column:span 7;min-height:440px}.c2{grid-column:span 5;min-height:440px}
+.c3,.c4,.c5{grid-column:span 4}
+
+/* STORY */
+.story{background:var(--paper)}
+.story .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(2rem,6vw,5.5rem);align-items:center}
+.collage{position:relative;height:560px}
+.collage .a{position:absolute;left:0;top:0;width:72%;height:78%;border-radius:var(--r);overflow:hidden;box-shadow:0 30px 60px -30px rgba(0,0,0,.45)}
+.collage .b{position:absolute;right:0;bottom:0;width:52%;height:52%;border-radius:var(--r);overflow:hidden;border:8px solid var(--paper);box-shadow:0 30px 60px -25px rgba(0,0,0,.45)}
+.collage .badge{position:absolute;left:58%;top:6%;width:130px;height:130px;animation:spin 26s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:2rem 0}
+.fact{border-top:2px solid var(--red);padding-top:.8rem}
+.fact b{font-family:var(--serif);font-size:2.1rem;display:block;line-height:1}
+.fact span{font-size:.85rem;color:var(--muted)}
+.story p+p{margin-top:1rem}
+
+/* MATCHDAY */
+.match{background:#1C1412;color:#fff;position:relative;overflow:hidden}
+.match:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.025) 0 70px,transparent 70px 140px)}
+.match .wrap{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.match .eyebrow{color:#FF9C8F}
+.match .lead{color:#cbbdb3}
+.specials{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.special{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:1.3rem}
+.special b{font-family:var(--serif);font-size:1.3rem;display:block}
+.special span{font-size:.85rem;color:#cbbdb3}
+
+/* MENU */
+.menu-head{text-align:center;max-width:720px;margin:0 auto 2.5rem}
+.menu-head .lead{margin-inline:auto}
+.tabs{display:flex;gap:.5rem;overflow-x:auto;padding:.3rem .2rem 1rem;scrollbar-width:none;justify-content:flex-start}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;border:1.5px solid var(--line);background:#fff;padding:.6rem 1.1rem;border-radius:999px;font:500 .92rem var(--sans);cursor:pointer;color:var(--ink);transition:all .2s}
+.tab:hover{border-color:var(--ink)}
+.tab.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.menu-panel{background:#fff;border-radius:24px;padding:clamp(1.5rem,4vw,3rem);box-shadow:0 30px 60px -45px rgba(60,30,10,.5);border:1px solid var(--line)}
+.menu-panel h3{font-size:2rem;margin-bottom:.3rem}
+.menu-note{color:var(--muted);font-size:.92rem;margin-bottom:1.8rem;font-style:italic}
+.items{display:grid;grid-template-columns:1fr 1fr;gap:.2rem 3rem}
+.item{padding:1rem 0;border-bottom:1px dashed var(--line)}
+.item b{font-weight:600;font-size:1.02rem}
+.item .pill{font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:#FDEBE7;color:var(--red);padding:.15rem .5rem;border-radius:99px;margin-left:.4rem;vertical-align:2px}
+.item p{font-size:.88rem;color:var(--muted);margin-top:.15rem}
+.fade{animation:fd .35s ease}
+@keyframes fd{from{opacity:0;transform:translateY(8px)}}
+.menu-foot{display:flex;justify-content:center;gap:.8rem;flex-wrap:wrap;margin-top:2rem}
+
+/* GALLERY */
+.gallery{columns:4 220px;column-gap:1rem}
+.gallery figure{break-inside:avoid;margin-bottom:1rem;border-radius:14px;overflow:hidden;cursor:zoom-in}
+.gallery img{transition:transform .6s;height:auto;min-height:180px}
+.gallery figure:hover img{transform:scale(1.05)}
+.lb{position:fixed;inset:0;background:rgba(10,6,5,.92);z-index:100;display:none;align-items:center;justify-content:center;padding:4vw;cursor:zoom-out}
+.lb.on{display:flex}
+.lb img{max-height:88vh;width:auto;border-radius:12px}
+
+/* REVIEWS */
+.reviews{background:var(--paper)}
+.rv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem;margin-top:2.5rem}
+.rv{background:#fff;border-radius:var(--r);padding:1.6rem;border:1px solid var(--line);display:flex;flex-direction:column;gap:1rem}
+.rv q{font-family:var(--serif);font-size:1.18rem;line-height:1.35;quotes:"“" "”"}
+.rv small{color:var(--muted);margin-top:auto}
+.score{display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap}
+.score .big{font-family:var(--serif);font-size:4.5rem;font-weight:800;line-height:1;color:var(--red)}
+
+/* VISIT */
+.visit .wrap{display:grid;grid-template-columns:1fr 1.15fr;gap:3rem;align-items:stretch}
+.info{display:grid;gap:1.6rem;margin-top:1.8rem}
+.info h4{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:.35rem}
+.hours{width:100%;border-collapse:collapse;font-size:.95rem}
+.hours td{padding:.35rem 0;border-bottom:1px solid var(--line)}
+.hours td:last-child{text-align:right;color:var(--muted)}
+.hours tr.today td{font-weight:600;color:var(--ink)}
+.map{border-radius:24px;overflow:hidden;min-height:460px;border:1px solid var(--line);background:var(--paper)}
+.map iframe{width:100%;height:100%;border:0;min-height:460px;filter:saturate(.85)}
+
+/* FOOTER */
+footer{background:var(--ink);color:#d8cbbf;padding:4rem 0 2rem}
+footer .wrap{display:grid;grid-template-columns:2fr 1fr 1fr;gap:2rem}
+footer h5{color:#fff;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:.8rem}
+footer a{text-decoration:none}
+footer a:hover{color:#fff}
+footer li{list-style:none;margin:.35rem 0}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:3rem;padding-top:1.4rem;display:flex;justify-content:space-between;font-size:.82rem;flex-wrap:wrap;gap:.5rem;grid-column:1/-1}
+
+/* mobile call bar */
+.callbar{display:none}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+
+@media (max-width:960px){
+  .nav ul{display:none}
+  .nav ul.open{display:flex;position:fixed;top:76px;left:0;right:0;flex-direction:column;background:var(--cream);padding:1.5rem;gap:1.2rem;box-shadow:0 20px 30px -20px rgba(0,0,0,.3)}
+  .nav ul.open a{color:var(--ink)}
+  .burger{display:block}
+  .open-pill{display:none}
+  .c1,.c2,.c3,.c4,.c5{grid-column:span 12;min-height:320px}
+  .story .wrap,.match .wrap,.visit .wrap{grid-template-columns:1fr}
+  .collage{height:420px}
+  .items{grid-template-columns:1fr}
+  .rv-grid{grid-template-columns:1fr 1fr}
+  footer .wrap{grid-template-columns:1fr}
+  .callbar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:60;gap:.5rem}
+  .callbar a{flex:1;justify-content:center}
+  body{padding-bottom:70px}
+}
+@media (max-width:560px){.rv-grid,.specials{grid-template-columns:1fr}.facts{grid-template-columns:1fr 1fr 1fr}.fact b{font-size:1.6rem}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="brand" aria-label="Caledonia Café & Bistro home">
+      <svg viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="48" fill="#B4232B"/>
+        <circle cx="50" cy="50" r="41" fill="none" stroke="#fff" stroke-width="1.5" opacity=".6"/>
+        <g transform="translate(50 50) rotate(-25)">
+          <ellipse rx="11" ry="16" fill="#FBF5EC"/>
+          <path d="M0-15 C-6-5 6 5 0 15" stroke="#B4232B" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+        </g>
+      </svg>
+      <span><b>Caledonia</b><small>Café &amp; Bistro</small></span>
+    </a>
+    <ul id="links">
+      <li><a href="#favourites">Favourites</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#matchday">Match Day</a></li>
+      <li><a href="#visit">Visit</a></li>
+      <li><a class="btn btn-red" href="tel:+441313373657">Book a table</a></li>
+    </ul>
+    <button class="burger" aria-label="Open menu" onclick="document.getElementById('links').classList.toggle('open')">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="bg"><img class="img" alt="Caledonia Café & Bistro's red shopfront on Gorgie Road" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Q78N9IYUHhLgGUgBIuQkRDoEtNGfFgtcBJZPv7oQMz4ndxIFmGylFgFI5uw-5_V07xD8LCA_7ukM-qcPcbAC6NWk9Sk3j1fafBOk_zSd3nx2X12LBfclE9M3GGPnfZ2pEvzPrN9Q=w1800" style="object-position:center 40%"></div>
+  <div class="wrap">
+    <span class="rating"><span class="stars">★★★★★</span> 4.6 from 300+ Google reviews</span>
+    <h1>Proper breakfasts on <em>Gorgie Road.</em></h1>
+    <p>Hearty Scottish fry-ups, fluffy pancake stacks, toasties, burgers and great coffee — served with a warm welcome, every single day.</p>
+    <div class="ctas">
+      <a class="btn btn-red" href="#menu">See the menu →</a>
+      <a class="btn btn-ghost" href="tel:+441313373657">Call to book · 0131 337 3657</a>
+    </div>
+  </div>
+  <div class="open-pill" id="openPill"><strong><span class="dot"></span><span id="openTxt">Open today</span></strong><div>195 Gorgie Rd · EH11 1TT</div></div>
+</header>
+
+<!-- ============ PERKS MARQUEE ============ -->
+<div class="perks" aria-label="Highlights">
+  <div class="marq">
+    <span>Open 7 days · 8am – 5pm</span><span>Dog friendly 🐶</span><span>Walk-ins &amp; bookings</span><span>Dine-in · Takeaway · Delivery</span><span>Kids menu</span><span>Wheelchair accessible</span><span>Decaf &amp; flavoured coffees</span>
+    <span>Open 7 days · 8am – 5pm</span><span>Dog friendly 🐶</span><span>Walk-ins &amp; bookings</span><span>Dine-in · Takeaway · Delivery</span><span>Kids menu</span><span>Wheelchair accessible</span><span>Decaf &amp; flavoured coffees</span>
+  </div>
+</div>
+
+<!-- ============ FAVOURITES ============ -->
+<section id="favourites">
+  <div class="wrap">
+    <div class="favs-head reveal">
+      <div>
+        <span class="eyebrow">House favourites</span>
+        <h2>Come hungry.<br>Leave happy.</h2>
+      </div>
+      <p class="lead">Big portions, fair prices and food made fresh to order — the reasons our regulars keep coming back.</p>
+    </div>
+    <div class="grid-favs">
+      <article class="card c1 reveal">
+        <img class="img" loading="lazy" alt="Full breakfast with eggs, beans, potato scone and toast" src="https://lh3.googleusercontent.com/grass-cs/AABkmLd246q8MHwV8sAjPju2MxYmqIBVIRl1ag2EbibxEhCSFxtpb7xT8hsOL9GNJ5SGtA2g4H9Kgf0YkkpGqwwqM8p8JlMr6TtBqb45ZosiuqKzb_Iyh6SPerMrVrERzLm-7JU1nUV9tzU5UCiD=w1400">
+        <div class="txt"><span class="tag">Most loved</span><h3>The Full Scottish</h3><p>Egg, bacon, sausage, haggis, potato scone, mushrooms, beans &amp; toast.</p></div>
+      </article>
+      <article class="card c2 reveal">
+        <img class="img" loading="lazy" alt="Pancake stack topped with strawberries, banana and blueberries" src="https://lh3.googleusercontent.com/grass-cs/AABkmLfV9-bQgrQNUx5XN4cILhDQ0k-u_zJzbBje3dWnQcBoOt-juHIuzhMwSbOHtgHAeMC8nX-0YTd-RE4Jc513-n97L9r7KxyCEZUd4ZPgi-4_X3TeONsFpp4pi5bQgtp7I3_GF7I8YxNwoCbc=w1400">
+        <div class="txt"><span class="tag">Sweet tooth</span><h3>Pancake stacks</h3><p>Piled with fresh fruit and drizzled in chocolate.</p></div>
+      </article>
+      <article class="card c3 reveal">
+        <img class="img" loading="lazy" alt="Cheeseburger with chips and side salad" src="https://lh3.googleusercontent.com/grass-cs/AABkmLf0A84hOaPQbYPOdMaZKyI-w5IVxuy1X_oLNvDwRnQOX0Elfl95q4ylo4TRwikNNrr0VO2kT889vWiiMtLu30cXY4BLAHRS-CW1yGkFXHA6Okq4E8nNNGCVq8cAA0yVa8VbAeAGbC_rvRVU=w1200">
+        <div class="txt"><h3>Burgers &amp; chips</h3><p>From the ¼lb classic to the Highland haggis burger.</p></div>
+      </article>
+      <article class="card c4 reveal">
+        <img class="img" loading="lazy" alt="Generously filled omelette with chips and salad" src="https://lh3.googleusercontent.com/grass-cs/AABkmLeq4O6vVlJLDBRfNERsQugIWFPEAjtFm0D8DPG7221jALe798wUymGi1ZlaZvOSoI0ylARfbX37oane0ka_E9pt0JBnppDHwPUcgcx3h7TntblznSQz3ugYfd8peCM7zgFoGwRo8TrY9r9a=w1200">
+        <div class="txt"><h3>Omelettes</h3><p>Generously filled, served with salad &amp; chips.</p></div>
+      </article>
+      <article class="card c5 reveal">
+        <img class="img" loading="lazy" alt="Three cappuccinos with latte art" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9TL6n40OL4sjxgcXb8NGTG4ndr89_TBSsQT5lmYJ3dcktHIUe1LGY8Hm63NTeA_qMdI-nOv5hgmGo7gak2reVvrYOMZRWKp3-GCg4RMRcHe6eceKf5lYZBZMbY6MqlLrKScWoOHhg=w1200">
+        <div class="txt"><h3>Coffee, your way</h3><p>Decaf on request · caramel, vanilla or hazelnut.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY ============ -->
+<section class="story" id="about">
+  <div class="wrap">
+    <div class="collage reveal">
+      <div class="a"><img class="img" loading="lazy" alt="Inside Caledonia Café: counter, cake display and seating" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QSPrixBQPfxnHNqfUBrmfPIudLUrS7zBRWjuqc-kNVeLcAi81vhykdNxPelQllisBfq3WSm4zOu0NA1ND8l9rh6ZPbN0d16Elinrryeb2j1v5KgA1FoC8ipsfXUcnH5Sys5cr6=w1200"></div>
+      <div class="b"><img class="img" loading="lazy" alt="Cappuccino with latte art in a red cup" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Qi0PA_PJv0ASkMgqlY7v43rSKeWML1iBonDEnmXblH4cPohwi04Sn45-Ar1mLJZCHL1NiHmxsPFVJKy3qti_GhSLNZn5tEkcTe6AAQnqig0O3sGnr3BozWRYw8IwoWNvK7Jcq9=w900"></div>
+      <svg class="badge" viewBox="0 0 200 200" aria-hidden="true">
+        <defs><path id="circ" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"/></defs>
+        <circle cx="100" cy="100" r="98" fill="#B4232B"/>
+        <text font-family="Inter" font-size="15.5" font-weight="600" letter-spacing="5.2" fill="#FBF5EC"><textPath href="#circ">GORGIE ROAD · EDINBURGH · DOG FRIENDLY ·</textPath></text>
+        <text x="100" y="112" text-anchor="middle" font-family="Fraunces" font-size="40" fill="#FBF5EC">☕</text>
+      </svg>
+    </div>
+    <div class="reveal">
+      <span class="eyebrow">Your local since day one</span>
+      <h2>A proper neighbourhood café.</h2>
+      <p class="lead">Caledonia is the kind of place you pass a dozen times, pop in once — and then can't stop coming back to.</p>
+      <div class="facts">
+        <div class="fact"><b>4.6★</b><span>300+ Google reviews</span></div>
+        <div class="fact"><b>7</b><span>days a week</span></div>
+        <div class="fact"><b>100+</b><span>dishes on the menu</span></div>
+      </div>
+      <p>From a quick bacon roll on the way to work to a long, lazy brunch with the family, we cook everything fresh to order and serve it with a smile. Our menu runs from classic Scottish and English breakfasts to toasties, paninis, baked tatties and grills — plus a <strong>Turkish breakfast</strong> with white cheese, olives and sucuk that you won't find anywhere else on the street.</p>
+      <p>Bring the kids (there's a menu just for them), bring the dog, or just bring yourself. Walk in, or give us a ring and we'll keep a table for you.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MATCH DAY ============ -->
+<section class="match" id="matchday">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Match day at Tynecastle</span>
+      <h2>Fuel up before<br>kick-off. ⚽</h2>
+      <p class="lead">We're a couple of minutes' walk from Tynecastle Park. On home match days, our Football Day Specials are served fast, hot and hearty — all with chips &amp; salad.</p>
+      <div style="margin-top:1.8rem;display:flex;gap:.8rem;flex-wrap:wrap">
+        <a class="btn btn-red" href="tel:+441313373657">Book for your group</a>
+      </div>
+    </div>
+    <div class="specials reveal">
+      <div class="special"><b>Fish &amp; chips</b><span>Golden, crispy, classic</span></div>
+      <div class="special"><b>Chilli con carne</b><span>Slow-cooked, with chips</span></div>
+      <div class="special"><b>Chicken curry</b><span>Warming and generous</span></div>
+      <div class="special"><b>Macaroni</b><span>Cheesy comfort food</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MENU ============ -->
+<section id="menu">
+  <div class="wrap">
+    <div class="menu-head reveal">
+      <span class="eyebrow">The menu</span>
+      <h2>Something for everyone.</h2>
+      <p class="lead">Breakfast, lunch and everything in between. Tap a section to explore.</p>
+    </div>
+    <div class="tabs" id="tabs" role="tablist"></div>
+    <div class="menu-panel" id="panel" aria-live="polite"></div>
+    <div class="menu-foot">
+      <a class="btn btn-red" href="https://www.ubereats.com/gb/store/caledonia-cafe-%26-bistro/v9t5LQ4RXdSs51-IcOqjwA" target="_blank" rel="noopener">Order delivery on Uber Eats</a>
+      <a class="btn btn-line" href="tel:+441313373657">Order for collection</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="favs-head reveal">
+      <div><span class="eyebrow">Inside Caledonia</span><h2>Have a look around.</h2></div>
+      <a class="btn btn-line" href="https://www.instagram.com/caledonia_cafe_bistro/" target="_blank" rel="noopener">Follow @caledonia_cafe_bistro</a>
+    </div>
+    <div class="gallery" id="gallery">
+      <figure class="reveal"><img class="img" loading="lazy" alt="Pancake with chocolate drizzle and berries" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9R3OYh-G-j1JOYp5GGcdHAz-9OqIIlpDw0e8fSHjiGaHN3QbSjKibNB0jaYpl660cfTTVlVvzWvrYJYtZCuiO_vvn6ua6Nf1cM9yyDYdUBO_uT6kOsOsZN5Sb2UcCqnn9kPBOhq=w900"></figure>
+      <figure class="reveal"><img class="img" loading="lazy" alt="Caledonia shopfront" src="https://lh3.googleusercontent.com/grass-cs/AABkmLclFZcD9JRc4J5K8j74ygW9VvtzEFeconjTyQ0VHPlYUGBQwR-mMrcyCtjhsdIcX8n466-ygh6M99G-3lUQAiyo5hucauitcRzfTTUEmZ_RaPeUawjKoJYXk3yMw2NcEZaUO79wlg=w900"></figure>
+      <figure class="reveal"><img class="img" loading="lazy" alt="Two cappuccinos" src="https://lh3.googleusercontent.com/grass-cs/AABkmLcL0pqSj2wlKXGyHET6obJxFTy85MIlJuI9YifKBoOWLaR_5B6o4dVE0KTpEC8BLFZqrmlS8hA_xHh9g6PJCKr4bB5ucRiTYcLQKHoMkZ2idB1Ov9PcOIYBJLiZL1iWRzfLwvNETg=w900"></figure>
+      <figure class="reveal"><img class="img" loading="lazy" alt="Cosy seating area" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9ROO7ypP1-oLmSInZXTt1TtvDj3yvHHSlhK5v-VRCTJxHkPvaNgSHxOlggPuZjZUmmEh8TYYv2tpz6jYwRBpNDyDLiWMqpz7U4znb2GS-XkEpIH7FDpRRKpHOIgj6RPOMtRQtH9=w900"></figure>
+      <figure class="reveal"><img class="img" loading="lazy" alt="Cake and pastry display counter" src="https://lh3.googleusercontent.com/grass-cs/AABkmLcXwHPsK7t3sO1Urvl_7eSrVSwuvuzM1kSPJsHVHN9LrdkkqP_aSq9datJVZgBbf9qBCKB0gFY0xSFRGpdmkaD-6T26GDzm3NPXecvNTYB6PuB2mv8QzMjk8pmsRPydFmM_Yb4=w900"></figure>
+      <figure class="reveal"><img class="img" loading="lazy" alt="Burger and chips" src="https://lh3.googleusercontent.com/grass-cs/AABkmLf0A84hOaPQbYPOdMaZKyI-w5IVxuy1X_oLNvDwRnQOX0Elfl95q4ylo4TRwikNNrr0VO2kT889vWiiMtLu30cXY4BLAHRS-CW1yGkFXHA6Okq4E8nNNGCVq8cAA0yVa8VbAeAGbC_rvRVU=w900"></figure>
+      <figure class="reveal"><img class="img" loading="lazy" alt="Latte art" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Qi0PA_PJv0ASkMgqlY7v43rSKeWML1iBonDEnmXblH4cPohwi04Sn45-Ar1mLJZCHL1NiHmxsPFVJKy3qti_GhSLNZn5tEkcTe6AAQnqig0O3sGnr3BozWRYw8IwoWNvK7Jcq9=w900"></figure>
+      <figure class="reveal"><img class="img" loading="lazy" alt="Breakfast plate" src="https://lh3.googleusercontent.com/grass-cs/AABkmLd246q8MHwV8sAjPju2MxYmqIBVIRl1ag2EbibxEhCSFxtpb7xT8hsOL9GNJ5SGtA2g4H9Kgf0YkkpGqwwqM8p8JlMr6TtBqb45ZosiuqKzb_Iyh6SPerMrVrERzLm-7JU1nUV9tzU5UCiD=w900"></figure>
+    </div>
+  </div>
+</section>
+<div class="lb" id="lb" onclick="this.classList.remove('on')"><img alt=""></div>
+
+<!-- ============ REVIEWS ============ -->
+<section class="reviews">
+  <div class="wrap">
+    <div class="score reveal">
+      <span class="big">4.6</span>
+      <div><div class="stars" style="font-size:1.4rem">★★★★★</div><div style="color:var(--muted)">from 300+ reviews on Google</div></div>
+    </div>
+    <h2 class="reveal" style="margin-top:1rem">Don't just take our word for it.</h2>
+    <div class="rv-grid">
+      <div class="rv reveal"><q>Genuinely a lovely little proper cafe!</q><small>Google review</small></div>
+      <div class="rv reveal"><q>The bistro has a loyal following of regulars and I'm in danger of becoming one of them.</q><small>Harry M. · Google</small></div>
+      <div class="rv reveal"><q>Lovely little cafe and restaurant with a cozy atmosphere and a very friendly staff.</q><small>Toosha A. · Google</small></div>
+      <div class="rv reveal"><q>Leave with a full stomach and happy face.</q><small>Henryk G. · Google</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VISIT ============ -->
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Come and see us</span>
+      <h2>Pull up a chair.</h2>
+      <div class="info">
+        <div><h4>Address</h4><p>195 Gorgie Road<br>Edinburgh EH11 1TT</p><p style="color:var(--muted);font-size:.9rem;margin-top:.3rem">Tynecastle bus stop is about 200 m away.</p></div>
+        <div><h4>Bookings &amp; collection</h4><p><a href="tel:+441313373657" style="font-family:var(--serif);font-size:1.6rem;font-weight:800;text-decoration:none">0131 337 3657</a></p></div>
+        <div><h4>Opening hours</h4><table class="hours" id="hours"></table></div>
+      </div>
+      <div style="display:flex;gap:.8rem;flex-wrap:wrap;margin-top:2rem">
+        <a class="btn btn-red" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=Caledonia+Cafe+%26+Bistro,195+Gorgie+Rd,Edinburgh+EH11+1TT">Get directions</a>
+      </div>
+    </div>
+    <div class="map reveal">
+      <iframe title="Map showing Caledonia Café & Bistro" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Caledonia+Cafe+%26+Bistro,+195+Gorgie+Rd,+Edinburgh+EH11+1TT&z=16&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div>
+      <a href="#top" class="brand" style="color:#fff">
+        <svg viewBox="0 0 100 100" aria-hidden="true" style="width:46px;height:46px"><circle cx="50" cy="50" r="48" fill="#B4232B"/><g transform="translate(50 50) rotate(-25)"><ellipse rx="11" ry="16" fill="#FBF5EC"/><path d="M0-15 C-6-5 6 5 0 15" stroke="#B4232B" stroke-width="2.4" fill="none" stroke-linecap="round"/></g></svg>
+        <span><b>Caledonia</b><small>Café &amp; Bistro</small></span>
+      </a>
+      <p style="margin-top:1rem;max-width:36ch">Breakfast · Brunch · Lunch · Coffee. A proper neighbourhood café on Gorgie Road, Edinburgh.</p>
+    </div>
+    <div><h5>Visit</h5><ul><li>195 Gorgie Road</li><li>Edinburgh EH11 1TT</li><li><a href="tel:+441313373657">0131 337 3657</a></li></ul></div>
+    <div><h5>Follow</h5><ul><li><a href="https://www.instagram.com/caledonia_cafe_bistro/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.ubereats.com/gb/store/caledonia-cafe-%26-bistro/v9t5LQ4RXdSs51-IcOqjwA" target="_blank" rel="noopener">Uber Eats</a></li><li><a href="#menu">Menu</a></li></ul></div>
+    <div class="foot-bottom"><span>© <span id="yr"></span> Caledonia Café &amp; Bistro</span><span>Website by Altu Bozyaka</span></div>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a class="btn btn-red" href="tel:+441313373657">📞 Call / Book</a>
+  <a class="btn btn-line" style="background:var(--cream)" href="#menu">Menu</a>
+</div>
+
+<script>
+/* ---------- MENU DATA (from the café's published menu; add prices here when confirmed) ---------- */
+const MENU = {
+  "Breakfast": {note:"Served all day.", items:[
+    ["Mini Breakfast","Egg, bacon, sausage, beans & toast"],
+    ["Scottish Breakfast","Egg, bacon, sausage, beans, potato scones, haggis, mushrooms & toast","Local"],
+    ["Full Breakfast","Egg, bacon, sausage, mushroom, beans, potato scone, black pudding, haggis, hash browns & toast"],
+    ["English Breakfast","Egg, bacon, sausage, black pudding, beans, hash browns, fried tomato & toast"],
+    ["Special Breakfast","2 eggs, 2 bacon, 2 sausages, 2 potato scones, 2 hash browns, haggis, black pudding, beans, mushrooms & toast","Big appetite"],
+    ["Vegetarian Breakfast","Egg, mushrooms, tomatoes, veggie sausage, beans, hash brown, potato scone & toast","V"],
+    ["Turkish Breakfast","White cheese, tomato, cucumber, olives, fried egg with sucuk (Turkish pepperoni) & bread or wraps","Try it"]]},
+  "Hot Rolls": {note:"Freshly made, morning to afternoon.", items:[
+    ["Bacon Roll","Two slices"],["Sausage Roll","Two pieces"],["Slice Sausage Roll","Two slices"],["Veggie Sausage Roll","Two pieces","V"],
+    ["Hash Brown Roll","Two pieces"],["Potato Scone Roll","Two pieces"],["Haggis Roll","Two pieces"],["Black Pudding Roll","Two pieces"],
+    ["Scrambled Egg Roll","Two eggs"],["Egg Roll","Two eggs"],["Egg & Sausage Roll",""],["Egg & Bacon Roll",""],["Bacon, Onion & Cheese",""],["BLT","Bacon, lettuce & tomato"]]},
+  "Burgers": {note:"All served with salad & chips.", items:[
+    ["¼lb Beef Burger",""],["¼lb Cheeseburger",""],["½lb Beef Burger",""],["½lb Cheeseburger",""],["Chicken Burger",""],["Veggie Burger","","V"],
+    ["Mexican Burger with Cheese",""],["Highland Burger","Haggis with cheese","Local"],["Bacon Burger with Cheese",""]]},
+  "Mains": {note:"All main courses served with salad & chips.", items:[
+    ["Special Grill","Burger, smoked sausage, egg, beans & chips"],["The Brunch Grill","2 burgers, egg, onions, beans & chips"],
+    ["Lamb or Pork Chops","Grilled with mushrooms, onions, mixed peppers & Diane sauce"],["Gammon Steak","With fried egg, gravy & chips"],
+    ["Sirloin Steak","Grilled mushrooms, onions, mixed peppers & Diane sauce"],["BBQ Chicken Kebab","Marinated chicken breast, grilled with mushrooms, onions & peppers"],
+    ["Chicken Curry","With rice or chips"],["Chilli con Carne","With rice or chips"],["Haddock & Chips","With peas"],["Scampi & Chips",""],
+    ["Chicken Nuggets & Chips",""],["Smoked Sausage & Chips",""],["Fish Cake & Chips",""],["Macaroni Cheese","","V"]]},
+  "Toasties": {note:"All toasties served with salad & chips.", items:[
+    ["Cheese","","V"],["Cheese & Onion","","V"],["Cheese & Ham",""],["Cheese & Pepperoni",""],["Tuna Mayo",""],["Tuna Mayo & Sweetcorn",""],
+    ["Spicy Chicken & Mayo",""],["Chicken & Bacon",""],["Turkish Toast","Feta cheese & sucuk (Turkish pepperoni)","Try it"]]},
+  "Paninis": {note:"All paninis served with salad & chips.", items:[
+    ["Cheese","","V"],["Cheese & Tomato","","V"],["Cheese & Onion","","V"],["Cheese & Pepperoni",""],["Cheese & Ham",""],["Tuna Mayo",""],
+    ["Tuna Mayo & Sweetcorn",""],["Chicken Mayo & Bacon",""],["Mexican Chicken",""],["BBQ Chicken",""],["Sweet Chilli Chicken",""],
+    ["Spicy Chicken & Mayo",""],["Roast Beef",""],["Turkey",""]]},
+  "Wraps": {note:"All wraps served with salad & chips.", items:[
+    ["Cheese","","V"],["Tuna Mayo",""],["Chicken Mayo",""],["BBQ Chicken",""],["Mexican Chicken",""],["Chicken Mayo & Bacon",""],["Coronation Chicken",""],["Chicken Tikka",""]]},
+  "Baked Tatties": {note:"Our fine tatties, served with mixed salad garnish.", items:[
+    ["Cheese","","V"],["Beans","","V"],["Coleslaw","","V"],["Chicken Mayo",""],["Tuna Mayo",""],["Mexican Chicken",""],["BBQ Chicken",""],
+    ["Chicken Tikka",""],["Coronation Chicken",""],["Chilli con Carne",""],["Any extra filling",""]]},
+  "Starters & Sides": {note:"", items:[
+    ["Soup of the Day","With a buttered roll or bread"],["Chips",""],["Onion Rings",""],["Potato Wedges",""],["Chips & Cheese",""],["Chips & Beans",""],["Chips & Curry Sauce",""],["Chips & Gravy",""]]},
+  "Kids": {note:"All kids' meals served with a Fruit Shoot.", items:[
+    ["Sausage, Chips & Beans",""],["Sausage, Chips & Egg",""],["Bacon, Sausage & Egg",""],["Chicken Nuggets & Chips",""],["Chicken Burger & Chips",""],["Cheeseburger & Chips",""],["Fish Cake & Chips",""]]},
+  "Coffee & Tea": {note:"Any coffee can be made with decaf, or flavoured with caramel, vanilla or hazelnut.", items:[
+    ["Americano",""],["Black Coffee",""],["White Coffee",""],["Latte",""],["Cappuccino",""],["Mocha",""],["Macchiato",""],["Cortado",""],["Long Black",""],
+    ["Hot Chocolate",""],["Tea",""],["Earl Grey",""],["Herbal Tea","Peppermint, very berry, green tea"]]},
+  "Cakes & Treats": {note:"Perfect with a coffee.", items:[
+    ["Fruit Scone",""],["Carrot Cake","","Popular"],["Chocolate Cake",""],["Tray Bakes","Toffee crunch, caramel shortbread, Mars bar crispy cake, rocky road"],["Muffins","Including blueberry"],["Croissant","Plain or filled"]]}
+};
+
+const tabs=document.getElementById('tabs'),panel=document.getElementById('panel');
+function show(name){
+  [...tabs.children].forEach(b=>b.classList.toggle('on',b.dataset.k===name));
+  const s=MENU[name];
+  panel.innerHTML=`<div class="fade"><h3>${name}</h3>${s.note?`<p class="menu-note">${s.note}</p>`:'<div style="height:1.2rem"></div>'}<div class="items">${
+    s.items.map(([n,d,p])=>`<div class="item"><b>${n}</b>${p?`<span class="pill">${p}</span>`:''}${d?`<p>${d}</p>`:''}</div>`).join('')}</div></div>`;
+}
+Object.keys(MENU).forEach((k,i)=>{const b=document.createElement('button');b.className='tab';b.textContent=k;b.dataset.k=k;b.setAttribute('role','tab');b.onclick=()=>show(k);tabs.appendChild(b)});
+show('Breakfast');
+
+/* ---------- HOURS + OPEN NOW ---------- */
+const days=['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
+const OPEN=8,CLOSE=17;
+const now=new Date(new Date().toLocaleString('en-US',{timeZone:'Europe/London'}));
+const today=(now.getDay()+6)%7;
+document.getElementById('hours').innerHTML=days.map((d,i)=>`<tr class="${i===today?'today':''}"><td>${d}${i===today?' · today':''}</td><td>8:00am – 5:00pm</td></tr>`).join('');
+const h=now.getHours()+now.getMinutes()/60, isOpen=h>=OPEN&&h<CLOSE;
+document.getElementById('openTxt').textContent=isOpen?'Open now · until 5pm':(h<OPEN?'Opens today at 8am':'Closed · opens 8am tomorrow');
+if(!isOpen)document.querySelector('#openPill .dot').classList.add('closed');
+document.getElementById('yr').textContent=now.getFullYear();
+
+/* ---------- NAV, REVEAL, LIGHTBOX ---------- */
+const nav=document.getElementById('nav');
+const onScroll=()=>nav.classList.toggle('solid',scrollY>40);onScroll();addEventListener('scroll',onScroll,{passive:true});
+document.querySelectorAll('#links a').forEach(a=>a.addEventListener('click',()=>document.getElementById('links').classList.remove('open')));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const lb=document.getElementById('lb');
+document.querySelectorAll('#gallery img').forEach(im=>im.addEventListener('click',()=>{lb.querySelector('img').src=im.src.replace(/=w\d+$/,'=w1600');lb.classList.add('on')}));
+addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+/* graceful fallback if a photo fails to load */
+document.querySelectorAll('img.img').forEach(im=>im.addEventListener('error',()=>{im.removeAttribute('src');im.style.minHeight='220px'}));
+</script>
+</body>
+</html>
